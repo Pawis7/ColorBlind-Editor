@@ -1,2 +1,3 @@
 # 1.0.0
-- Edit this file to change your mod's changelog.
+- First Version
+- Just ColorBlind on portals
