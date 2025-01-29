@@ -5,6 +5,7 @@
 
 using namespace geode::prelude;
 
+
 class $modify(MyEffectGameObject, EffectGameObject) {
 	void customSetup() {
 		EffectGameObject::customSetup();
@@ -30,6 +31,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				case 11: {
@@ -47,6 +50,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				case 2926: {
@@ -64,6 +69,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				case 12: {
@@ -81,6 +88,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				case 13: {
@@ -98,6 +107,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				case 47: {
@@ -115,6 +126,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				case 111: {
@@ -132,6 +145,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				case 660: {
@@ -149,6 +164,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				case 745: {
@@ -166,6 +183,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				case 1331: {
@@ -183,6 +202,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				case 1933: {
@@ -200,6 +221,8 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 					} else {
 						log::info("No se encontró portal_04_extra_2_001.png");
 					}
+					setCascadeColorEnabled(true);
+					setCascadeOpacityEnabled(true);
 					break;
 				}
 				default: {
@@ -210,3 +233,4 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 		}
 	}
 };
+
