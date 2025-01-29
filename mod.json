@@ -8,14 +8,15 @@
 	},
 	"id": "pawis7.cbeditor",
 	"name": "ColorBlind Editor",
-	"version": "v1.0.1",
+	"version": "v1.0.2",
 	"developer": "Pawis7",
 	"description": "pawis here",
 	
 	"links": {
         "homepage": "https://www.youtube.com/@Pawis777",
         "source": "https://github.com/Pawis7/ColorBlind-Editor"
-    }
-	
+    },
+	"tags": [
+		"interface", "enhancement", "customization", "editor"]
 }
 
