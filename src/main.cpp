@@ -2,7 +2,7 @@
 
 using namespace geode::prelude;
 
-std::unordered_map<std::int, std::string> portalIDToFrameNameNumber = {
+std::unordered_map<int, std::string> portalIDToFrameNameNumber = {
 	// +14 extra_001 +13 extra_2_001
 	{10, "01"},
 	{11, "02"},
@@ -36,7 +36,7 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 			extra1->setPositionX(extra1->getPositionX() + offset);
 			this->addChild(extra1, 2);
 		} else log::info("No se encontró portal_{}_extra_001.png", frameNameNumber);
-		if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName(fmt::format("portal_{}_extra_2_001.png", frameNameNumber).c_str()) {
+		if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName(fmt::format("portal_{}_extra_2_001.png", frameNameNumber).c_str())) {
 			extra2->setAnchorPoint({0.5f, 0.5f});
 			extra2->setPosition({this->getContentSize() / 2});
 			extra2->setPositionX(extra1->getPositionX() + offset - 1);
