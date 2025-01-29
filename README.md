@@ -1,7 +1,7 @@
 # ColorBlind on Editor
 I added a colorblind on portals
 
-<img src="referencia.png" width="150" alt="Example" />
+<img src="referencia.png" width="500" alt="Example" />
 
 *Update logo.png to change your mod's icon (please)*
 
