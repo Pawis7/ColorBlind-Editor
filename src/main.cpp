@@ -18,11 +18,6 @@ std::unordered_map<int, std::string> portalIDToFrameNameNumber = {
 	{1933, "18"}
 };
 
-/*
-
-break;
-*/
-
 class $modify(MyEffectGameObject, EffectGameObject) {
 	void customSetup() {
 		EffectGameObject::customSetup();
