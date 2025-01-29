@@ -39,7 +39,7 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 		if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName(fmt::format("portal_{}_extra_2_001.png", frameNameNumber).c_str())) {
 			extra2->setAnchorPoint({0.5f, 0.5f});
 			extra2->setPosition({this->getContentSize() / 2});
-			extra2->setPositionX(extra1->getPositionX() + offset - 1);
+			extra2->setPositionX(extra2->getPositionX() + offset - 1);
 			this->addChild(extra2, 3);
 		} else log::info("No se encontró portal_{}_extra_2_001.png", frameNameNumber);
 		this->setCascadeColorEnabled(true);
