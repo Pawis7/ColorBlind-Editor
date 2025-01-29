@@ -1,0 +1,21 @@
+{
+	"geode": "4.2.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "pawis7.cbeditor",
+	"name": "ColorBlind Editor",
+	"version": "v1.0.0",
+	"developer": "Pawis7",
+	"description": "pawis here",
+	
+	"links": {
+        "homepage": "https://www.youtube.com/@Pawis777",
+        "source": "https://github.com/Pawis7/ColorBlind-Editor"
+    }
+	
+}
+
