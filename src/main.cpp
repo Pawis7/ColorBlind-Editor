@@ -41,4 +41,3 @@ class $modify(MyEffectGameObject, EffectGameObject) {
 		this->setCascadeOpacityEnabled(true);
 	}
 };
-
