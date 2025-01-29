@@ -1,232 +1,43 @@
-#include <Geode/Geode.hpp>
 #include <Geode/modify/EffectGameObject.hpp>
-#include <Geode/utils/cocos.hpp>
-#include <Geode/binding/GameManager.hpp>
 
 using namespace geode::prelude;
 
+std::unordered_map<int, std::string> portalIDToFrameNameNumber = {
+	// +14 extra_001 +13 extra_2_001
+	{10, "01"},
+	{11, "02"},
+	{2926, "19"},
+	// +11 extra_001 +10 extra_2_001
+	{12, "03"},
+	{13, "04"},
+	{47, "07"},
+	{111, "10"},
+	{660, "13"},
+	{745, "14"},
+	{1331, "17"},
+	{1933, "18"}
+};
 
 class $modify(MyEffectGameObject, EffectGameObject) {
 	void customSetup() {
 		EffectGameObject::customSetup();
-
-		// Verficamos si estamos en el editor o fuera (solo para que funcione dentro del editor)
-		if (GameManager::sharedState()->m_playLayer == nullptr) {
-
-			switch (m_objectID) {
-				case 10: {
-					//sobrepone el icono colorblind
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_01_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 14, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_01_extra_001.png");
-					}
-					//sobrepone el borde colorblind (los portales de cambio de gravedad son mas delgado usan un axis distnto a los demas)
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_01_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 13, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_01_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-				case 11: {
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_02_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 14, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_02_extra_001.png");
-					}
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_02_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 13, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_02_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-				case 2926: {
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_19_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 14, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_02_extra_001.png");
-					}
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_19_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 13, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_02_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-				case 12: {
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_03_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 11, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_03_extra_001.png");
-					}
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_03_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 10, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_03_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-				case 13: {
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_04_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 11, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_04_extra_001.png");
-					}
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_04_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 10, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_04_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-				case 47: {
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_07_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 11, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_07_extra_001.png");
-					}
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_07_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 10, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_07_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-				case 111: {
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_10_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 11, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_10_extra_001.png");
-					}
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_10_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 10, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_10_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-				case 660: {
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_13_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 11, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_13_extra_001.png");
-					}
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_13_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 10, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_13_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-				case 745: {
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_14_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 11, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_14_extra_001.png");
-					}
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_14_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 10, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_14_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-				case 1331: {
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_17_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 11, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_17_extra_001.png");
-					}
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_17_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 10, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_17_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-				case 1933: {
-					if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName("portal_18_extra_001.png")) {
-						extra1->setAnchorPoint({0.5f, 0.5f});
-						extra1->setPosition({getContentSize().width / 2 + 11, getContentSize().height / 2});
-						addChild(extra1, 2);
-					} else {
-						log::info("No se encontró portal_18_extra_001.png");
-					}
-					if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName("portal_18_extra_2_001.png")) {
-						extra2->setAnchorPoint({0.5f, 0.5f});
-						extra2->setPosition({getContentSize().width / 2 + 10, getContentSize().height / 2});
-						addChild(extra2, 3);
-					} else {
-						log::info("No se encontró portal_18_extra_2_001.png");
-					}
-					setCascadeColorEnabled(true);
-					setCascadeOpacityEnabled(true);
-					break;
-				}
-			}
-		}
+		if (PlayLayer::get()) return; // Verficamos si estamos en el editor o fuera (solo para que funcione dentro del editor)
+		if (!portalIDToFrameNameNumber.contains(m_objectID)) return;
+		const std::string& frameNameNumber = portalIDToFrameNameNumber.find(m_objectID)->second;
+		const int& offset = (m_objectID == 10 || m_objectID == 11 || m_objectID == 2926) ? 14 : 11;
+		if (CCSprite* extra1 = CCSprite::createWithSpriteFrameName(fmt::format("portal_{}_extra_001.png", frameNameNumber).c_str())) {
+			extra1->setAnchorPoint({0.5f, 0.5f});
+			extra1->setPosition({this->getContentSize() / 2});
+			extra1->setPositionX(extra1->getPositionX() + offset);
+			this->addChild(extra1, 2);
+		} else log::info("No se encontró portal_{}_extra_001.png", frameNameNumber);
+		if (CCSprite* extra2 = CCSprite::createWithSpriteFrameName(fmt::format("portal_{}_extra_2_001.png", frameNameNumber).c_str())) {
+			extra2->setAnchorPoint({0.5f, 0.5f});
+			extra2->setPosition({this->getContentSize() / 2});
+			extra2->setPositionX(extra2->getPositionX() + offset - 1);
+			this->addChild(extra2, 3);
+		} else log::info("No se encontró portal_{}_extra_2_001.png", frameNameNumber);
+		this->setCascadeColorEnabled(true);
+		this->setCascadeOpacityEnabled(true);
 	}
 };
-
