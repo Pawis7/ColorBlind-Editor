@@ -1,5 +1,4 @@
-# Suscrible to my Youtube
+# Support me 
+Do you like what I make and want to give me some coffe, support me on BuyMeACoffe!
 
-If you like the mod, help me to get 100k suscribers ^^
-
-https://youtube.com/@Pawis777
+https://buymeacoffee.com/aurelyn

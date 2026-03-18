@@ -27,7 +27,7 @@ void addPortalExtraSprite(EffectGameObject* obj, const std::string& frameName, i
         sprite->setPositionX(sprite->getPositionX() + offset - offsetAdjust);
         obj->addChild(sprite, zOrder);
     } else {
-        log::info("No se encontró portal_{}_extra_{}.png", frameName, offsetAdjust ? "2_001" : "001");
+        log::info("Missing_Portal_{}_extra_{}.png", frameName, offsetAdjust ? "2_001" : "001");
     }
 }
 
